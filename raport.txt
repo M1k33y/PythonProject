@@ -1,0 +1,11 @@
+=== Raport regresie ===
+
+Regresie liniară:
+  Ecuație: y = 1.000 * x + 0.000
+  R² = 1.000
+  Eroare standard = 0.000
+
+Regresie logaritmică:
+  Ecuație: y = 2.105 * ln(x) + 0.828
+  R² = 0.961
+  Eroare standard = 0.313
