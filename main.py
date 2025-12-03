@@ -1,4 +1,5 @@
 from data_io import read_points_from_console, read_points_from_csv
+from regression import linear_regression, log_regression
 
 def main():
     print("Alege sursa de date:")
@@ -15,8 +16,19 @@ def main():
         print("Opțiune invalidă.")
         return
 
-    # aici vei apela ulterior funcțiile de regresie
     print("Puncte încărcate:", list(zip(x, y)))
+
+    # --------------------------
+    # aici fac regresiile
+    # --------------------------
+    lin_res = linear_regression(x, y)
+    print("Regresie liniară: m =", lin_res["m"], "b =", lin_res["b"], "R² =", lin_res["r2"])
+
+    try:
+        log_res = log_regression(x, y)
+        print("Regresie logaritmică: a =", log_res["a"], "b =", log_res["b"], "R² =", log_res["r2"])
+    except ValueError as e:
+        print("Regresie logaritmică nu a putut fi calculată:", e)
 
 if __name__ == "__main__":
     main()
